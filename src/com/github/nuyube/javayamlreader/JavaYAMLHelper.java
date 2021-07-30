@@ -1,4 +1,4 @@
-package xyz.nuyube.javayamlreader;
+package com.github.nuyube.javayamlreader;
 
 import java.util.ArrayList;
 
