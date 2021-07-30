@@ -51,22 +51,26 @@ public class JavaYAMLHelper {
 
     public static String[] getBlocks(String yaml) {
         yaml = removeAllComments(yaml);
-        String yamlLeft = yaml;
-        int iterationLimit = 400;
+        String yamlLeft = yaml; 
         ArrayList<String> blocks = new ArrayList<String>();
-        while (!yamlLeft.isBlank()) {
-            iterationLimit--;
-            if (iterationLimit < 0)
-                break;
+        while (!yamlLeft.isBlank()) { 
             String block = getBlock("*", yamlLeft);
-            if (!block.isBlank()) {
-                yamlLeft = yamlLeft.substring(block.length());
+            if (!block.isBlank()) { 
+                try{
+                yamlLeft = yamlLeft.substring(block.length()+1);
+                }
+                catch(IndexOutOfBoundsException ioobe) {
+yamlLeft = "";
+
+                }
                 blocks.add(block);
             } else {
                 return (String[]) blocks.toArray();
             }
         }
-        return (String[]) blocks.toArray();
+        String[] strings = new String[blocks.size()];
+        blocks.toArray(strings);
+        return strings;
     }
 
     /**
