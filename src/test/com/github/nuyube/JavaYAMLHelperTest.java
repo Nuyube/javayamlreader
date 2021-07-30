@@ -37,6 +37,20 @@ public class JavaYAMLHelperTest
         int indent = JavaYAMLHelper.getIndent(withoutName);
         assertEquals(indent, 2);
     }
+    @Test
+    public void testGetBlocks() {
+        String yaml = yaml_1;
+        yaml = JavaYAMLHelper.removeAllComments(yaml);
+        String withoutName = JavaYAMLHelper.denameBlock(yaml);
+        System.out.println("Without name:\n"+withoutName);
+        String[] blocks = JavaYAMLHelper.getBlocks(withoutName);
+        int ctr = 0;
+        for (String string : blocks) {
+            System.out.println("Block " + ++ctr  +"\n"+ string );
+        }
+        assertEquals(3, blocks.length);
+    }
+
    /* @Test
     public void testGetBlock() {
         String yaml = yaml_1;
