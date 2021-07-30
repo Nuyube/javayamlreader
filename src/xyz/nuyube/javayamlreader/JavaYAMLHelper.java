@@ -6,7 +6,7 @@ public class JavaYAMLHelper {
 
     /**
      * Gets a value from a yaml key.
-     * 
+     *
      * @param key  The key to search for
      * @param yaml The yaml to search in
      * @return The text of the value, if found. "" otherwise.
@@ -25,7 +25,7 @@ public class JavaYAMLHelper {
     /**
      * Removes all comments and empty lines in a yaml file. Searching works by
      * deleting lines starting with "#".
-     * 
+     *
      * @param yaml The yaml to search
      * @return The yaml file, without any comments or empty lines.
      */
@@ -71,7 +71,7 @@ public class JavaYAMLHelper {
 
     /**
      * Removes the first line of a block produced by getBlock.
-     * 
+     *
      * @param yaml The yaml of the block to dename
      * @return The denamed block
      */
@@ -86,7 +86,7 @@ public class JavaYAMLHelper {
 
     /**
      * Gets the number of spaces preceding a line
-     * 
+     *
      * @param line The line to test
      * @return The number of spaces preceding the line
      */
@@ -110,7 +110,7 @@ public class JavaYAMLHelper {
 
     /**
      * Gets a specific block from a larger block
-     * 
+     *
      * @param blockName The name of the block, or * for any block
      * @param yaml      The upper block to search
      * @return The block, if found, or "".
@@ -171,7 +171,7 @@ public class JavaYAMLHelper {
     /**
      * Unindents a block based on the first line. You should dename your block
      * before you use this!
-     * 
+     *
      * @param yaml The block to unindent.
      * @return The unindented block
      * @throws InvalidYamlException Thrown if the block somehow goes above the base
