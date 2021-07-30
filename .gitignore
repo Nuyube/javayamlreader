@@ -1,1 +1,5 @@
 Main.java
+target/
+.settings/
+.classpath
+.project
