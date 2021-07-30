@@ -187,7 +187,7 @@ public class JavaYAMLHelper {
             int startingSpaces = 0;
             // Keep adding one for each space
             while (yaml.startsWith(" ")) {
-                yaml.substring(1);
+                yaml = yaml.substring(1);
                 startingSpaces++;
             }
             // Get our lines
@@ -198,6 +198,7 @@ public class JavaYAMLHelper {
                 if (lines[i].startsWith(" ".repeat(startingSpaces))) {
                     lines[i] = lines[i].substring(startingSpaces);
                 } else {
+                    if(i == 0) return yaml;
                     throw new InvalidYamlException("The input was not a block.");
                 }
             }
